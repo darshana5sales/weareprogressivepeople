@@ -1,0 +1,294 @@
+/* ============================================================
+   Brand layer - Progressive People  (site-wide)
+   RULE:  PINK (logo)  = buttons + links + interactive controls
+          GOLD         = all other accent text, labels, icons,
+                         numbers, rules and decoration
+   Loaded LAST so it cleanly overrides the base stylesheets.
+   Decorative accents are left to the gold defaults in the base
+   CSS, so this file only needs to assert PINK on interaction.
+   Wix Studio: paste this block into the site Custom CSS panel.
+   ============================================================ */
+
+:root {
+  /* ---- Logo pink (interaction) ---- */
+  --color-pink: #FF2D7E;
+  --color-pink-soft: #FF6FA8;
+  --color-pink-deep: #D11C5E;
+  --color-pink-tint: rgba(255, 45, 126, 0.12);
+  --color-pink-tint-soft: rgba(255, 45, 126, 0.06);
+
+  /* Functional link alias points to the logo colour */
+  --color-link: var(--color-pink);
+
+  /* Gold remains the named accent for everything non-interactive */
+  --color-accent: var(--color-gold);
+  --color-secondary: var(--color-gold);
+}
+
+/* ============================================================
+   PINK — BUTTONS
+   ============================================================ */
+.btn--primary {
+  background: var(--color-pink);
+  border-color: var(--color-pink);
+  color: var(--color-white);
+}
+.btn--primary:hover {
+  background: var(--color-pink-soft);
+  border-color: var(--color-pink-soft);
+  color: var(--color-ink);
+}
+.btn--ghost {
+  color: var(--color-pink);
+}
+
+/* ============================================================
+   PINK — LINKS
+   ============================================================ */
+.text-link,
+.card__link,
+.dual-cta__link,
+.breadcrumb a,
+.team-card__contact a,
+.post-article a {
+  color: var(--color-pink);
+}
+
+.post-article a {
+  text-decoration: underline;
+}
+
+/* Primary navigation links */
+.site-nav__link:hover,
+.site-nav__link[aria-current="page"] {
+  color: var(--color-pink);
+}
+.site-nav__link[aria-current="page"]::after {
+  background: var(--color-pink);
+}
+
+/* Dropdown menu links */
+.site-nav__dropdown a:hover {
+  background: var(--color-pink-tint);
+  color: var(--color-pink);
+}
+.site-nav__dropdown li:last-child a {
+  color: var(--color-pink);
+}
+
+/* Footer links */
+.footer-col__list a:hover,
+.footer-contact a:hover,
+.contact-list__value a:hover {
+  color: var(--color-pink);
+}
+.footer-socials a:hover {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+}
+.footer-newsletter__form input:focus {
+  border-color: var(--color-pink);
+}
+
+/* On-page anchor nav links (service / hub pages) */
+.anchor-nav__list a:hover,
+.anchor-nav__list a.is-active {
+  color: var(--color-white);
+  border-left-color: var(--color-pink);
+}
+
+/* Blog: table-of-contents links + pagination links */
+.post-toc__list li:hover,
+.post-toc__list li.is-active {
+  border-left-color: var(--color-pink);
+}
+.pagination a:hover {
+  background: var(--color-ink);
+  color: var(--color-pink);
+  border-color: var(--color-ink);
+}
+.pagination .is-current {
+  background: var(--color-pink);
+  border-color: var(--color-pink);
+  color: var(--color-ink);
+}
+
+/* ============================================================
+   PINK — INTERACTIVE CONTROLS (pills, accordion, form, tabs)
+   ============================================================ */
+.category-pill:hover,
+.category-pill.is-active {
+  background: var(--color-ink);
+  color: var(--color-pink);
+  border-color: var(--color-ink);
+}
+.section--dark .category-pill:hover,
+.section--dark .category-pill.is-active {
+  background: var(--color-pink);
+  color: var(--color-ink);
+  border-color: var(--color-pink);
+}
+
+.faq__icon {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+}
+.faq__item.is-open .faq__icon {
+  background: var(--color-pink);
+  color: var(--color-ink);
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__select:focus,
+.form__file:hover {
+  border-color: var(--color-pink);
+}
+.form__file:hover {
+  color: var(--color-pink);
+}
+.form-tab.is-active {
+  color: var(--color-pink);
+  border-bottom-color: var(--color-pink);
+}
+
+/* ============================================================
+   GOLD — all other accent text / labels / icons / decoration
+   inherit from the base stylesheets (no overrides needed):
+   .hl-gold, .stat__value, .section-title__rule, .card__icon,
+   .card__list, .slider__title/dots/btn, .testimonial__role/avatar,
+   .article-card__tag, .anchor-nav__label, .value-item, .process,
+   .timeline, .pillar-intro, .roles-grid, contact icons/labels,
+   map pin, post-toc title, blockquote, author card.
+   ============================================================ */
+
+/* ============================================================
+   "WHAT WE DO" DROPDOWN NAVIGATION (layout)
+   ============================================================ */
+.site-nav__item {
+  position: relative;
+}
+
+.site-nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 280px;
+  padding: var(--space-3);
+  background: var(--color-off-black);
+  border: 1px solid var(--color-hairline-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out),
+              visibility var(--t-fast);
+  z-index: var(--z-drawer);
+}
+
+/* small hover bridge so the menu doesn't close in the gap */
+.site-nav__item.has-dropdown::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+}
+
+.site-nav__item.has-dropdown:hover .site-nav__dropdown,
+.site-nav__item.has-dropdown:focus-within .site-nav__dropdown,
+.site-nav__dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.site-nav__dropdown a {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-muted-on-dark);
+  text-transform: none;
+  transition: background var(--t-fast), color var(--t-fast);
+  white-space: nowrap;
+}
+
+.site-nav__dropdown li:last-child a {
+  margin-top: var(--space-2);
+  border-top: 1px solid var(--color-hairline-dark);
+  padding-top: var(--space-4);
+  font-weight: var(--fw-semibold);
+}
+
+/* Caret on the dropdown trigger */
+.site-nav__link--dropdown::after {
+  content: '';
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  margin-left: 0.5em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform var(--t-fast);
+  vertical-align: middle;
+}
+
+.site-nav__item.has-dropdown:hover .site-nav__link--dropdown::after,
+.site-nav__item.has-dropdown:focus-within .site-nav__link--dropdown::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+/* ---- Mobile: dropdown becomes a nested, indented list ---- */
+@media (max-width: 1024px) {
+  .site-nav__dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    min-width: 0;
+    width: 100%;
+    margin-top: var(--space-3);
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+    border-left: 2px solid var(--color-hairline-dark);
+    border-radius: 0;
+    padding: 0 0 0 var(--space-4);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--t-base) var(--ease-out);
+  }
+
+  .site-nav__dropdown.is-open {
+    transform: none;
+    max-height: 600px;
+  }
+
+  .site-nav__dropdown a {
+    font-size: var(--fs-body);
+    padding: var(--space-3) 0;
+    white-space: normal;
+  }
+
+  .site-nav__dropdown li:last-child a {
+    border-top: 0;
+  }
+
+  .site-nav__link--dropdown::after {
+    margin-left: 0.6em;
+  }
+}

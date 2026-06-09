@@ -1,0 +1,278 @@
+/* ============================================================
+   Base - Typography, layout primitives
+   ============================================================ */
+
+html,
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+body {
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-base);
+}
+
+/* ---------- Headings ---------- */
+.h-display,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: inherit;
+}
+
+.h-display {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-extrabold);
+}
+
+.h1 {
+  font-size: var(--fs-h1);
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+}
+
+.h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+}
+
+.h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+}
+
+/* ---------- Body text ---------- */
+.lead {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-loose);
+  color: var(--color-muted-on-light);
+}
+
+.lead--dark {
+  color: var(--color-muted-on-dark);
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+}
+
+p + p {
+  margin-top: var(--space-4);
+}
+
+/* ---------- Eyebrow (section label) - hidden site-wide ---------- */
+.eyebrow,
+.eyebrow-row {
+  display: none;
+}
+
+/* Section title block: eyebrow + heading + optional gold underline */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+.section-title .eyebrow {
+  margin-bottom: var(--space-4);
+}
+
+/* Eyebrow above non-title element (logo strip, etc.) */
+.eyebrow-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-7);
+}
+
+.section-title__rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--color-gold);
+  margin: var(--space-4) auto 0;
+}
+
+.section-title--left {
+  text-align: left;
+}
+
+.section-title--left .section-title__rule {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ---------- Highlight word (gold accent within heading) ---------- */
+.hl-gold {
+  color: var(--color-gold);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: inherit;
+  transition: color var(--t-fast) var(--ease-out);
+}
+
+.text-link {
+  color: var(--color-gold);
+  font-weight: var(--fw-semibold);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.text-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transition: transform var(--t-base) var(--ease-out);
+}
+
+.text-link:hover::after {
+  transform: scaleX(0.6);
+}
+
+/* ---------- Layout primitives ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--prose {
+  max-width: var(--container-prose);
+}
+
+.section {
+  padding-block: var(--section-py);
+}
+
+.section--sm {
+  padding-block: calc(var(--section-py) * 0.6);
+}
+
+.section--dark {
+  background: var(--color-ink);
+  color: var(--color-text-on-dark);
+}
+
+.section--light {
+  background: var(--color-bone);
+  color: var(--color-ink);
+}
+
+.section--white {
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.section--offblack {
+  background: var(--color-off-black);
+  color: var(--color-text-on-dark);
+}
+
+/* Grid helpers */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Flex helpers */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Spacing utilities */
+.mt-0 { margin-top: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-muted-light { color: var(--color-muted-on-light); }
+.text-muted-dark { color: var(--color-muted-on-dark); }
+.text-gold { color: var(--color-gold); }
+
+/* Visually hidden */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Scroll anchor offset for sticky header */
+[id] {
+  scroll-margin-top: 100px;
+}

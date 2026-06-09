@@ -1,0 +1,141 @@
+/* ============================================================
+   Design Tokens - Progressive People
+   Wix Studio-compatible variables (colour, type, spacing)
+   ============================================================ */
+
+:root {
+  /* ---------- Colour palette ---------- */
+  --color-ink: #0B0B0B;
+  --color-off-black: #161616;
+  --color-bone: #F6F4EF;
+  --color-white: #FFFFFF;
+
+  --color-gold: #D4A847;
+  --color-gold-soft: #E8C97A;
+  --color-gold-deep: #B58F33;
+
+  --color-coral: #FF3366;
+
+  --color-muted-on-dark: #B8B5AC;
+  --color-muted-on-light: #5C5C5C;
+
+  --color-hairline-dark: #262626;
+  --color-hairline-light: #E5E1D8;
+
+  /* Functional aliases */
+  --color-bg: var(--color-bone);
+  --color-bg-dark: var(--color-ink);
+  --color-text: var(--color-ink);
+  --color-text-on-dark: var(--color-white);
+  --color-accent: var(--color-gold);
+  --color-link: var(--color-gold);
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-editorial: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+
+  /* Type scale (desktop) */
+  --fs-display: 4rem;        /* 64px */
+  --fs-h1: 3rem;             /* 48px */
+  --fs-h2: 2.25rem;          /* 36px */
+  --fs-h3: 1.75rem;          /* 28px */
+  --fs-h4: 1.375rem;         /* 22px */
+  --fs-body-lg: 1.125rem;    /* 18px */
+  --fs-body: 1rem;           /* 16px */
+  --fs-sm: 0.875rem;         /* 14px */
+  --fs-xs: 0.75rem;          /* 12px */
+
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-base: 1.6;
+  --lh-loose: 1.75;
+
+  /* Letter spacing */
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.05em;
+  --ls-wider: 0.18em;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ---------- Spacing (8px base) ---------- */
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 2.5rem;    /* 40 */
+  --space-8: 3rem;      /* 48 */
+  --space-9: 4rem;      /* 64 */
+  --space-10: 5rem;     /* 80 */
+  --space-11: 6rem;     /* 96 */
+  --space-12: 7.5rem;   /* 120 */
+
+  /* Section padding (tightened for a denser, premium rhythm) */
+  --section-py: 5rem;      /* 80 desktop */
+  --section-py-mobile: 3.25rem;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1600px;  /* full-width premium content box */
+  --container-narrow: 960px;
+  --container-prose: 760px;
+  --gutter: 2.5rem;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-card: 0 4px 24px rgba(11, 11, 11, 0.06);
+  --shadow-card-hover: 0 12px 36px rgba(11, 11, 11, 0.12);
+  --shadow-card-dark: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-dark-hover: 0 12px 36px rgba(0, 0, 0, 0.55);
+
+  /* ---------- Motion ---------- */
+  --t-fast: 180ms;
+  --t-base: 300ms;
+  --t-slow: 600ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ---------- Z-index ---------- */
+  --z-header: 100;
+  --z-drawer: 200;
+  --z-modal: 300;
+}
+
+/* Tablet down */
+@media (max-width: 1024px) {
+  :root {
+    --fs-display: 3rem;
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.25rem;
+    --section-py: 4rem;
+    --gutter: 1.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --fs-display: 2.25rem;
+    --fs-h1: 2rem;
+    --fs-h2: 1.625rem;
+    --fs-h3: 1.375rem;
+    --fs-h4: 1.125rem;
+    --fs-body-lg: 1rem;
+    --section-py: 3.25rem;
+    --gutter: 1.25rem;
+  }
+}
