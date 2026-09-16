@@ -292,3 +292,204 @@
     margin-left: 0.6em;
   }
 }
+
+/* ============================================================
+   2026 AMENDS — grouped nav, restructured footer, text stats,
+   legal pages. Appended last so it overrides the base layers.
+   ============================================================ */
+
+/* ---- Grouped "What We Do" dropdown (Disciplines / Sectors) ---- */
+.site-nav__dropdown-label {
+  padding: var(--space-3) var(--space-4) var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  pointer-events: none;
+}
+
+.site-nav__dropdown-label + li a {
+  padding-top: var(--space-2);
+}
+
+/* Second group heading gets air above it */
+.site-nav__dropdown-label ~ .site-nav__dropdown-label {
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--color-hairline-dark);
+  padding-top: var(--space-4);
+}
+
+/* ---- Footer: two stacked link groups in one column ---- */
+.footer-col__title--stacked {
+  margin-top: var(--space-6);
+}
+
+.footer-newsletter__consent {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  color: var(--color-muted-on-dark);
+  max-width: 62ch;
+}
+
+.footer-newsletter__consent a {
+  color: var(--color-pink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---- Stat band: word-based values rather than big numerals ----
+   Three of the four tiles now carry words instead of a numeral, so the
+   value box gets a shared min-height and centres its contents. That keeps
+   the uppercase labels on one baseline across all four tiles. */
+.stat-band .stat__value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 4.5rem;
+}
+
+.stat__value--text {
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+@media (max-width: 540px) {
+  .stat-band .stat__value {
+    min-height: 0;
+  }
+}
+
+/* ---- Legal / policy pages ---- */
+.legal-body {
+  max-width: 76ch;
+  margin-inline: auto;
+}
+
+.legal-body .post-article h2 {
+  scroll-margin-top: 120px;
+}
+
+.legal-meta {
+  margin-bottom: var(--space-7);
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--color-hairline-light);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  font-size: var(--fs-sm);
+  color: var(--color-muted-on-light);
+}
+
+.legal-meta strong {
+  color: var(--color-ink);
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--fs-sm);
+}
+
+.legal-table th,
+.legal-table td {
+  padding: var(--space-4);
+  border: 1px solid var(--color-hairline-light);
+  text-align: left;
+  vertical-align: top;
+}
+
+.legal-table th {
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.legal-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---- Related services strip ---- */
+.related-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 900px) {
+  .related-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* The grouped dropdown is taller than the original flat list */
+  .site-nav__dropdown.is-open {
+    max-height: 1200px;
+  }
+
+  .site-nav__dropdown-label {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .site-nav__dropdown-label ~ .site-nav__dropdown-label {
+    padding-top: var(--space-4);
+  }
+}
+
+/* ---- Native form-control UI on the dark contact card ----
+   The controls inherit `color` from the dark section, so <option> text was
+   white while the browser painted the native dropdown on its own white
+   background: invisible except for the highlighted row. `color-scheme`
+   makes the browser draw the whole popup in dark UI (and fixes the dropdown
+   arrow, scrollbar and autofill colours with it); the explicit option
+   colours are the fallback for engines that ignore option styling. */
+.form__input,
+.form__textarea,
+.form__select {
+  color-scheme: dark;
+}
+
+.form__select option,
+.form__select optgroup {
+  background-color: var(--color-off-black);
+  color: var(--color-white);
+}
+
+/* Light-background contexts flip both back */
+.section--light .form__input,
+.section--light .form__textarea,
+.section--light .form__select {
+  color-scheme: light;
+}
+
+.section--light .form__select option,
+.section--light .form__select optgroup {
+  background-color: var(--color-white);
+  color: var(--color-ink);
+}
+
+/* Placeholders: the browser default sits too close to the card background */
+.form__input::placeholder,
+.form__textarea::placeholder,
+.footer-newsletter__form input::placeholder {
+  color: var(--color-muted-on-dark);
+  opacity: 1;
+}
+
+.section--light .form__input::placeholder,
+.section--light .form__textarea::placeholder {
+  color: var(--color-muted-on-light);
+}

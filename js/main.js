@@ -188,18 +188,37 @@
     var cards = document.querySelectorAll('[data-category]');
     if (!pills.length) return;
 
+    function apply(cat, updateHash) {
+      var matched = false;
+      pills.forEach(function (p) {
+        var isMatch = p.getAttribute('data-category-pill') === cat;
+        if (isMatch) matched = true;
+        p.classList.toggle('is-active', isMatch);
+      });
+      if (!matched) return apply('all', updateHash);
+
+      cards.forEach(function (card) {
+        var show = (cat === 'all' || card.getAttribute('data-category') === cat);
+        card.style.display = show ? '' : 'none';
+      });
+
+      if (updateHash && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', cat === 'all' ? window.location.pathname : '#' + cat);
+      }
+    }
+
     pills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        var cat = pill.getAttribute('data-category-pill');
-        pills.forEach(function (p) {
-          p.classList.toggle('is-active', p === pill);
-        });
-        cards.forEach(function (card) {
-          var cardCat = card.getAttribute('data-category');
-          var show = (cat === 'all' || cardCat === cat);
-          card.style.display = show ? '' : 'none';
-        });
+        apply(pill.getAttribute('data-category-pill'), true);
       });
+    });
+
+    // Deep link: blog.html#executive-search opens pre-filtered
+    var initial = (window.location.hash || '').replace('#', '');
+    if (initial) apply(initial, false);
+
+    window.addEventListener('hashchange', function () {
+      apply((window.location.hash || '').replace('#', '') || 'all', false);
     });
   }
 

@@ -9,3 +9,9 @@ Desktop.ini
 # Editor folders
 .vscode/
 .idea/
+
+# Client briefs / working documents — this repo is a public web root,
+# anything committed here is publicly downloadable.
+*.docx
+*.doc
+*.pdf

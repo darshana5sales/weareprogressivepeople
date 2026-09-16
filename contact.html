@@ -41,6 +41,7 @@
     <a href="index.html" class="brand" aria-label="Progressive People home">
       <img class="brand__mark" src="assets/img/logo-mark.png" alt="Progressive People" width="42" height="42" />
     </a>
+
     <nav class="site-nav" data-nav aria-label="Primary">
       <ul class="site-nav__list">
         <li><a href="index.html" class="site-nav__link">Home</a></li>
@@ -48,13 +49,16 @@
         <li class="site-nav__item has-dropdown">
           <a href="what-we-do.html" class="site-nav__link site-nav__link--dropdown" aria-haspopup="true" aria-expanded="false">What We Do</a>
           <ul class="site-nav__dropdown">
-            <li><a href="service-adtech-recruitment.html">AdTech Recruitment</a></li>
+            <li class="site-nav__dropdown-label">Disciplines</li>
             <li><a href="service-executive-search.html">Executive Search &amp; Headhunting</a></li>
-            <li><a href="service-programmatic.html">Programmatic Advertising Recruitment</a></li>
-            <li><a href="service-tech-recruitment.html">Tech &amp; SaaS Recruitment</a></li>
-            <li><a href="service-media-tech.html">Media Tech Headhunting</a></li>
-            <li><a href="service-martech.html">MarTech Recruitment</a></li>
-            <li><a href="service-digital-media.html">Digital Media Recruitment</a></li>
+            <li><a href="service-commercial-leadership.html">Commercial &amp; Revenue Leadership</a></li>
+            <li><a href="service-publisher-supply.html">Publisher &amp; Supply Partnerships</a></li>
+            <li><a href="service-programmatic.html">Programmatic, Trading &amp; AdOps</a></li>
+            <li class="site-nav__dropdown-label">Sectors</li>
+            <li><a href="service-adtech-recruitment.html">AdTech &amp; Programmatic</a></li>
+            <li><a href="service-media-tech.html">Advanced TV &amp; CTV</a></li>
+            <li><a href="service-digital-media.html">Publishers &amp; Media Owners</a></li>
+            <li><a href="service-martech.html">MarTech &amp; Data</a></li>
             <li><a href="what-we-do.html">All services overview</a></li>
           </ul>
         </li>
@@ -62,8 +66,11 @@
       </ul>
       <a href="contact.html" class="btn btn--primary">Get in touch</a>
     </nav>
+
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">
-      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
     </button>
   </div>
 </header>
@@ -124,7 +131,7 @@
             </div>
             <div>
               <div class="contact-list__label">Follow us</div>
-              <div class="contact-list__value"><a href="#">Progressive People on LinkedIn</a></div>
+              <div class="contact-list__value"><a href="https://www.linkedin.com/company/progressive-people-ltd/" target="_blank" rel="noopener noreferrer">Progressive People on LinkedIn</a></div>
             </div>
           </div>
         </div>
@@ -186,10 +193,10 @@
                 <label class="form__label" for="hire-geo">Geography</label>
                 <select class="form__select" id="hire-geo" name="geo">
                   <option value="">Please select…</option>
-                  <option>UK</option>
-                  <option>Europe</option>
-                  <option>United States</option>
-                  <option>Multi-territory</option>
+                  <option>UK &mdash; single market</option>
+                  <option>UK &amp; EMEA</option>
+                  <option>EMEA</option>
+                  <option>Global</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -318,11 +325,11 @@
 
       <div class="faq__item">
         <button class="faq__question" aria-expanded="false">
-          <span>Do you work on contingent terms?</span>
+          <span>Do you work retained or contingent?</span>
           <span class="faq__icon" aria-hidden="true">+</span>
         </button>
         <div class="faq__answer">
-          <div class="faq__answer-inner">No. Every Progressive People mandate is retained and exclusive. The economic model is what allows us to invest the research and qualification time genuine senior search demands.</div>
+          <div class="faq__answer-inner">Both. We match the engagement to the brief rather than prescribing every client to the same model. Confidential, market-mapped board and C-suite searches are retained &mdash; that economic model is what funds the research and qualification time genuine senior search demands. A well-defined hire in a more liquid part of the market can work perfectly well on a contingent basis.</div>
         </div>
       </div>
 
@@ -348,8 +355,11 @@
         <div class="footer-brand__logo">
           <img src="assets/img/logo-stack.png" alt="Progressive People" />
         </div>
-        <p>UK AdTech recruitment and digital media executive search. Connecting advanced media businesses with transformative senior talent across the UK, Europe and the US.</p>
+        <p>
+          A UK-based boutique executive search practice for the advanced media industry &mdash; headhunting the commercial, technical and operational leaders who scale AdTech, advanced TV, publishing and MarTech businesses, on UK, EMEA and global remits.
+        </p>
       </div>
+
       <div class="footer-col">
         <h4 class="footer-col__title">Company</h4>
         <ul class="footer-col__list">
@@ -359,40 +369,60 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
-        <h4 class="footer-col__title">Services</h4>
+        <h4 class="footer-col__title">What we do</h4>
         <ul class="footer-col__list">
-          <li><a href="service-adtech-recruitment.html">AdTech Recruitment UK</a></li>
-          <li><a href="service-executive-search.html">Executive Search London</a></li>
-          <li><a href="service-programmatic.html">Programmatic Advertising</a></li>
-          <li><a href="service-tech-recruitment.html">Tech &amp; SaaS Recruitment</a></li>
-          <li><a href="service-media-tech.html">Media Tech Headhunters</a></li>
-          <li><a href="service-martech.html">MarTech Recruitment</a></li>
-          <li><a href="service-digital-media.html">Digital Media Recruitment</a></li>
+          <li><a href="service-executive-search.html">Executive Search &amp; Headhunting</a></li>
+          <li><a href="service-commercial-leadership.html">Commercial &amp; Revenue Leadership</a></li>
+          <li><a href="service-publisher-supply.html">Publisher &amp; Supply Partnerships</a></li>
+          <li><a href="service-programmatic.html">Programmatic, Trading &amp; AdOps</a></li>
+        </ul>
+        <h4 class="footer-col__title footer-col__title--stacked">Sectors we serve</h4>
+        <ul class="footer-col__list">
+          <li><a href="service-adtech-recruitment.html">AdTech &amp; Programmatic</a></li>
+          <li><a href="service-media-tech.html">Advanced TV &amp; CTV</a></li>
+          <li><a href="service-digital-media.html">Publishers &amp; Media Owners</a></li>
+          <li><a href="service-martech.html">MarTech &amp; Data</a></li>
         </ul>
       </div>
+
       <div class="footer-col footer-contact">
         <h4 class="footer-col__title">Get in touch</h4>
-        <p>London, United Kingdom<br /><a href="mailto:scott@weareprogressivepeople.com">scott@weareprogressivepeople.com</a><br /><a href="mailto:keith@weareprogressivepeople.com">keith@weareprogressivepeople.com</a><br /><a href="tel:+447801211334">+44 7801 211 334</a></p>
+        <p>
+          London, United Kingdom<br />
+          <a href="mailto:scott@weareprogressivepeople.com">scott@weareprogressivepeople.com</a><br />
+          <a href="mailto:keith@weareprogressivepeople.com">keith@weareprogressivepeople.com</a><br />
+          <a href="tel:+447801211334">+44 7801 211 334</a>
+        </p>
       </div>
     </div>
+
     <div class="footer-newsletter">
       <div class="footer-newsletter__copy">
         <div class="footer-newsletter__title">Insights for senior media leaders</div>
-        <p class="footer-newsletter__body">Occasional commentary on the AdTech leadership market &mdash; no spam, unsubscribe anytime.</p>
+        <p class="footer-newsletter__body">Occasional commentary on the advanced media leadership market &mdash; no spam, unsubscribe anytime.</p>
       </div>
       <form class="footer-newsletter__form" action="#" method="post" novalidate>
-        <label class="sr-only" for="newsletter-email-footer">Email address</label>
-        <input id="newsletter-email-footer" type="email" name="email" placeholder="your@email.com" required />
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input id="newsletter-email" type="email" name="email" placeholder="your@email.com" required />
         <button type="submit" class="btn btn--primary">Subscribe</button>
       </form>
+      <p class="footer-newsletter__consent">
+        By subscribing you agree to us storing your email address so we can send you our insights newsletter. You can unsubscribe at any time. See our <a href="privacy-policy.html">Privacy Policy</a>.
+      </p>
     </div>
+
     <div class="footer-bottom">
       <span>&copy; 2026 Progressive People. All rights reserved.</span>
-      <div class="footer-bottom__legal"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
+      <div class="footer-bottom__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
       <div class="footer-socials">
-        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V9h3v10zM6.5 7.7c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM20 19h-3v-5.4c0-1.3-.5-2.1-1.6-2.1-1.2 0-1.9.8-1.9 2.1V19h-3V9h2.9v1.3c.5-.8 1.5-1.4 2.9-1.4 2.1 0 3.7 1.3 3.7 4V19z"/></svg></a>
-        <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.55 7.49L22 22h-6.79l-4.6-6-5.27 6H2.59l7.02-8.02L2 2h6.93l4.16 5.49L18.244 2zm-2.38 18h1.84L7.27 4H5.36l10.5 16z"/></svg></a>
+        <a href="https://www.linkedin.com/company/progressive-people-ltd/" target="_blank" rel="noopener noreferrer" aria-label="Progressive People on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V9h3v10zM6.5 7.7c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM20 19h-3v-5.4c0-1.3-.5-2.1-1.6-2.1-1.2 0-1.9.8-1.9 2.1V19h-3V9h2.9v1.3c.5-.8 1.5-1.4 2.9-1.4 2.1 0 3.7 1.3 3.7 4V19z"/></svg>
+        </a>
       </div>
     </div>
   </div>

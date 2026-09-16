@@ -6,17 +6,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.weareprogressivepeople.com/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.weareprogressivepeople.com/what-we-do.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weareprogressivepeople.com/service-adtech-recruitment.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -26,22 +16,27 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weareprogressivepeople.com/service-programmatic.html</loc>
+    <loc>https://www.weareprogressivepeople.com/service-commercial-leadership.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weareprogressivepeople.com/service-tech-recruitment.html</loc>
+    <loc>https://www.weareprogressivepeople.com/service-publisher-supply.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/service-programmatic.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/service-adtech-recruitment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.weareprogressivepeople.com/service-media-tech.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weareprogressivepeople.com/service-martech.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -51,23 +46,88 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weareprogressivepeople.com/blog.html</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.weareprogressivepeople.com/service-martech.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weareprogressivepeople.com/blog-category.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.weareprogressivepeople.com/service-tech-recruitment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weareprogressivepeople.com/blog-post.html</loc>
+    <loc>https://www.weareprogressivepeople.com/about.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.weareprogressivepeople.com/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/cookie-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-advanced-tv-talent-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-boutique-vs-global-headhunters.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-choosing-an-executive-search-firm.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-cro-mandates-placement-timelines.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-finding-a-headhunter-for-your-career.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-head-of-programmatic-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-hiring-a-cfo-in-adtech.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-international-leadership-market.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-local-vs-international-headhunters.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weareprogressivepeople.com/insight-retained-vs-contingent-search.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
