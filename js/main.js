@@ -16,6 +16,7 @@
     initContactTabs();
     initBlogFilter();
     initAnchorNavHighlight();
+    initCalendly();
   });
 
   /* ----------------------------------------------------------
@@ -250,6 +251,48 @@
     }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
 
     targets.forEach(function (item) { observer.observe(item.target); });
+  }
+
+  /* ----------------------------------------------------------
+     Calendly booking widget (contact page)
+     Loads Calendly only when the visitor clicks, so no
+     third-party cookies are set before they choose to book.
+     ---------------------------------------------------------- */
+  function initCalendly() {
+    var wrap = document.querySelector('[data-calendly]');
+    if (!wrap) return;
+    var btn = wrap.querySelector('[data-calendly-load]');
+    var url = wrap.getAttribute('data-calendly-url');
+    if (!btn || !url) return;
+
+    btn.addEventListener('click', function () {
+      btn.disabled = true;
+      btn.textContent = 'Loading calendar…';
+
+      var script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+
+      script.onload = function () {
+        if (!window.Calendly || !window.Calendly.initInlineWidget) {
+          script.onerror();
+          return;
+        }
+        var host = document.createElement('div');
+        host.className = 'booking__widget';
+        wrap.innerHTML = '';
+        wrap.appendChild(host);
+        wrap.classList.add('is-loaded');
+        window.Calendly.initInlineWidget({ url: url, parentElement: host });
+      };
+
+      script.onerror = function () {
+        btn.disabled = false;
+        btn.textContent = 'Try again';
+      };
+
+      document.head.appendChild(script);
+    });
   }
 
   /* ----------------------------------------------------------

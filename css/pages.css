@@ -74,6 +74,56 @@
   color: var(--color-muted-on-dark);
 }
 
+/* Three-up variant ("What makes us different") */
+.values-list--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .values-list--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Short intro paragraph under a centred section title */
+.section-title__intro {
+  max-width: 68ch;
+  margin: var(--space-6) auto 0;
+  font-size: var(--fs-body-lg);
+  color: var(--color-muted-on-light);
+}
+
+.section--dark .section-title__intro,
+.section--offblack .section-title__intro {
+  color: var(--color-muted-on-dark);
+}
+
+/* Founder one-line descriptor, under the role label */
+.team-card__descriptor {
+  margin: calc(-1 * var(--space-3)) 0 var(--space-5);
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  color: var(--color-white);
+}
+
+/* Pull quote inside the founding story */
+.pull-quote {
+  margin: var(--space-7) 0 0;
+  padding: var(--space-5) var(--space-6);
+  border-left: 4px solid var(--color-gold);
+  background: rgba(212, 168, 71, 0.08);
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: var(--fs-h4);
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+.pull-quote p {
+  margin: 0;
+}
+
 /* ============================================================
    TEAM
    ============================================================ */
@@ -129,6 +179,97 @@
   display: block;
   font-size: var(--fs-sm);
   color: var(--color-muted-on-dark);
+}
+
+/* ============================================================
+   ROLES & SPECIALISMS
+   ============================================================ */
+.roles-jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-9);
+}
+
+.roles-jump a {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-hairline-light);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-ink);
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+
+.roles-jump a:hover,
+.roles-jump a:focus-visible {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+}
+
+.roles-discipline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: var(--space-8);
+  align-items: start;
+  padding-block: var(--space-9);
+  border-top: 1px solid var(--color-hairline-light);
+  scroll-margin-top: 110px;
+}
+
+.roles-discipline:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.roles-discipline:last-of-type {
+  padding-bottom: 0;
+}
+
+.roles-discipline__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.roles-discipline__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-4);
+}
+
+.roles-discipline__intro {
+  font-size: var(--fs-body-lg);
+  color: var(--color-muted-on-light);
+  margin-bottom: var(--space-5);
+}
+
+.roles-discipline .roles-grid {
+  margin: 0;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-6);
+  row-gap: 0;
+}
+
+@media (max-width: 900px) {
+  .roles-discipline {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 640px) {
+  .roles-discipline .roles-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================================================
@@ -546,6 +687,73 @@
 @media (max-width: 640px) {
   .contact-form-card {
     padding: var(--space-6);
+  }
+}
+
+/* Calendly booking card. The widget only loads after a click, so the
+   placeholder is what most visitors see first. */
+.booking {
+  max-width: 1040px;
+  margin-inline: auto;
+  border: 1px solid var(--color-hairline-dark);
+  border-radius: var(--radius-lg);
+  background: var(--color-ink);
+  overflow: hidden;
+}
+
+.booking.is-loaded {
+  background: var(--color-white);
+  border-color: transparent;
+}
+
+.booking__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-9) var(--space-6);
+  text-align: center;
+}
+
+.booking__icon {
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 168, 71, 0.12);
+  color: var(--color-gold);
+  border-radius: var(--radius-md);
+}
+
+.booking__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.booking__note {
+  max-width: 58ch;
+  font-size: var(--fs-sm);
+  color: var(--color-muted-on-dark);
+}
+
+.booking__note a {
+  color: var(--color-pink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.booking__widget {
+  height: 700px;
+}
+
+@media (max-width: 640px) {
+  .booking__placeholder {
+    padding: var(--space-7) var(--space-5);
+  }
+
+  .booking__widget {
+    height: 860px;
   }
 }
 

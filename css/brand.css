@@ -493,3 +493,25 @@
 .section--light .form__textarea::placeholder {
   color: var(--color-muted-on-light);
 }
+
+/* ---- Dropdown footer links (Roles & Specialisms + All services overview) ----
+   The two closing links sit together under one divider, both in pink. */
+.site-nav__dropdown-foot a {
+  margin-top: var(--space-2);
+  border-top: 1px solid var(--color-hairline-dark);
+  padding-top: var(--space-4);
+  font-weight: var(--fw-semibold);
+  color: var(--color-pink);
+}
+
+.site-nav__dropdown-foot + li:last-child a {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: var(--space-3);
+}
+
+@media (max-width: 1024px) {
+  .site-nav__dropdown-foot a {
+    border-top: 0;
+  }
+}
