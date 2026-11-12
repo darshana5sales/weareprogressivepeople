@@ -515,3 +515,25 @@
     border-top: 0;
   }
 }
+
+/* ---- Phone-width fixes: keep the newsletter form and contact columns inside the screen ---- */
+@media (max-width: 640px) {
+  .footer-newsletter__form {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+  .footer-newsletter__form input {
+    min-width: 0;
+  }
+  .footer-newsletter__form .btn {
+    flex-shrink: 0;
+  }
+}
+
+.contact-split > * {
+  min-width: 0;
+}
+
+.contact-list__value {
+  overflow-wrap: anywhere;
+}
