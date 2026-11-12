@@ -537,3 +537,130 @@
 .contact-list__value {
   overflow-wrap: anywhere;
 }
+
+/* ---- Wix forms: fields drawn by js/wix-forms.js ---- */
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form__loading {
+  font-size: var(--fs-sm);
+  color: var(--color-muted-on-dark);
+}
+
+.form__req {
+  color: var(--color-pink);
+}
+
+.form__error,
+.form__status {
+  font-size: var(--fs-sm);
+  color: var(--color-pink-soft);
+}
+
+.form__error {
+  margin-top: var(--space-1);
+}
+
+.form__input[aria-invalid="true"],
+.form__textarea[aria-invalid="true"],
+.form__select[aria-invalid="true"],
+.footer-newsletter__form input[aria-invalid="true"] {
+  border-color: var(--color-pink);
+}
+
+.form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--color-muted-on-dark);
+  cursor: pointer;
+}
+
+.form__check input[type="checkbox"],
+.form__check input[type="radio"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--color-pink);
+  cursor: pointer;
+}
+
+.form__choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form__other {
+  margin-top: var(--space-3);
+}
+
+.form__file input:focus-visible + span,
+.form__file:focus-within {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+}
+
+.form__success {
+  padding: var(--space-6);
+  border: 1px solid var(--color-hairline-dark);
+  border-left: 3px solid var(--color-pink);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+}
+
+.form__success p + p {
+  margin-top: var(--space-2);
+}
+
+.form__success--inline {
+  flex: 1;
+  min-width: 240px;
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+}
+
+.btn[aria-busy="true"] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+/* Newsletter: email and button on one row, the tick-box and messages underneath */
+.footer-newsletter__form {
+  flex-wrap: wrap;
+}
+
+.footer-newsletter__fields {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.footer-newsletter__fields input {
+  min-width: 0;
+}
+
+.footer-newsletter__optin,
+.footer-newsletter__form .form__status {
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.footer-newsletter__optin:empty {
+  display: none;
+}
+
+.footer-newsletter__optin .form__field {
+  gap: var(--space-1);
+}
